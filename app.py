@@ -656,10 +656,10 @@ if __name__ == "__main__":
                 file_download,
             ],
         )
-
+    port = os.getenv("FC_CUSTOM_LISTEN_PORT", args.port)
     demo.launch(
         server_name=args.host,
-        server_port=args.port,
+        server_port=int(port),
         show_api=False,
         favicon_path=os.path.join(root_dir, "assets/hivision_logo.png"),
         root_path=args.root_path,
